@@ -1,0 +1,58 @@
+<template>
+  <div class="flex items-center justify-center">
+    <button
+      @click="copyAndShowDialog"
+      class="rounded-full bg-transparent p-4 text-white transition-colors hover:text-gray-300"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        class="h-8 w-8"
+      >
+        <path
+          d="M20 4H4c-1.104 0-2 .896-2 2v12c0 1.104.896 2 2 2h16c1.104 0 2-.896 2-2V6c0-1.104-.896-2-2-2zm0 2v.5L12 13 4 6.5V6h16zm0 12H4V8l8 5.5L20 8v10z"
+        />
+      </svg>
+    </button>
+
+    <div v-if="dialog" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+      <div class="w-full max-w-sm rounded-lg bg-white p-6 shadow-xl">
+        <div class="border-b border-gray-200 pb-4 text-xl font-bold uppercase text-gray-800">
+          Email Copied
+        </div>
+
+        <p class="mt-4 text-sm text-gray-600">
+          My contact email was copied successfully. You just need to paste it (Ctrl+V) in the "to" field in your email provider if you want to contact me.
+        </p>
+
+        <p class="mt-2 text-right text-sm text-gray-600">
+          Thank you
+        </p>
+
+        <div class="mt-4 flex justify-end space-x-2">
+          <button @click="dialog = false" class="rounded-lg bg-red-500 px-4 py-2 font-semibold text-white transition-colors hover:bg-red-600">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const dialog = ref(false);
+const email = 'tiagofortalezag@gmail.com';
+
+const copyAndShowDialog = () => {
+  navigator.clipboard.writeText(email)
+    .then(() => {
+      dialog.value = true;
+    })
+    .catch((error) => {
+      console.error('Failed to copy text to clipboard:', error);
+    });
+};
+</script>
