@@ -4,7 +4,7 @@
       <About />
     </section>
 
-    <section id="skills" class="scroll-mt-24">
+    <section id="skills" class="scroll-mt-48">
       <Skills />
     </section>
 
@@ -19,8 +19,8 @@
 </template>
 
 <script setup>
-import About from '../components/About.vue';
-import Skills from '../components/Skills.vue';
-import Projects from '../components/Projects.vue';
-import Contact from '../components/Contact.vue';
+import About from "../components/About.vue";
+import Skills from "../components/Skills.vue";
+import Projects from "../components/Projects.vue";
+import Contact from "../components/Contact.vue";
 </script>
