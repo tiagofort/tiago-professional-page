@@ -54,17 +54,17 @@ const definition = 'Full Stack Developer';
 const greetings = "Hello, and welcome to my portfolio!"
 const firstParagraph =
 'I’m a software developer with over a decade of experience in programming, having started my career back in 2011.'+
-'Throughout this journey, I’ve worked with several technologies that shaped my foundation as a developer and gave me'+
-'a solid understanding of how to design, build, and deliver reliable software solutions.';
+' Throughout this journey, I’ve worked with several technologies that shaped my foundation as a developer and gave me'+
+' a solid understanding of how to design, build, and deliver reliable software solutions.';
 const secondParagraph = 
 'In recent years, I’ve been fully focused on modern web development, specializing in JavaScript and its ecosystem. I'+
-'work with technologies such as TypeScript, Vue, Nuxt, React, Node.js, Express, NestJS, MongoDB, TailwindCSS, CSS, and HTML.'+
+' work with technologies such as TypeScript, Vue, Nuxt, React, Node.js, Express, NestJS, MongoDB, TailwindCSS, CSS, and HTML.'+
 ' My skills allow me to build applications that are not only functional but also scalable, maintainable, and user-friendly.';
 const thirdParagraph =
 'What sets me apart is the combination of my strong professional background and my passion for continuous learning. While I may'+
 'be venturing into new technologies that differ from those I worked with earlier in my career, I bring the maturity, adaptability,'+
 ' and problem-solving mindset of a seasoned developer. Because of this, I’m genuinely happy and motivated to embrace entry-level'+
-'opportunities in modern stacks, as they allow me to grow while proving the value of my past experience in a fresh context.';
+' opportunities in modern stacks, as they allow me to grow while proving the value of my past experience in a fresh context.';
 const fourthParagraph =
 'As you’ll see in the Projects section, I already have several applications running in production, reflecting both my technical'+
 'ability and my commitment to delivering real-world results.';
