@@ -2,18 +2,9 @@
   <div class="flex items-center justify-center">
     <button
       @click="copyAndShowDialog"
-      class="rounded-full bg-transparent p-4 text-white transition-colors hover:text-gray-300"
+      class="rounded-full bg-transparent text-white transition-colors hover:text-gray-300"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="currentColor"
-        viewBox="0 0 24 24"
-        class="h-8 w-8"
-      >
-        <path
-          d="M20 4H4c-1.104 0-2 .896-2 2v12c0 1.104.896 2 2 2h16c1.104 0 2-.896 2-2V6c0-1.104-.896-2-2-2zm0 2v.5L12 13 4 6.5V6h16zm0 12H4V8l8 5.5L20 8v10z"
-        />
-      </svg>
+      <Icon icon="mdi:email-outline" class="w-8 h-8 text-white-500" />
     </button>
 
     <div v-if="dialog" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
@@ -42,6 +33,7 @@
 
 <script setup>
 import { ref } from 'vue';
+import { Icon } from "@iconify/vue";
 
 const dialog = ref(false);
 const email = 'tiagofortalezag@gmail.com';

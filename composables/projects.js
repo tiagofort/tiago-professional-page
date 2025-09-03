@@ -1,19 +1,19 @@
 import lunalogo from '../assets/images/logoLuna.svg';
-import tiagoprof from '../assets/images/tiago-profile.png';
-import lunapp from '../assets/images/luna-app.png';
+import tiagoprof from '../assets/images/tiago-profile.webp';
+import lunapp from '../assets/images/luna-app.webp';
 
 export const projects = [
   {
     title: 'Tiago Profile',
-    resume: 'My professional page',
+    resume: 'My professional page developed using Vue3, Nuxt3 and Tailwind',
     git: 'https://github.com/tiagofort/tiago-profile',
     site: 'https://www.tiagofortgai.com',
     img: tiagoprof,
   },
   {
     title: 'Luna Crystals API',
-    resume: 'Luna Crystals API developed in NodeJs',
-    git: 'https://github.com/tiagofort/luna-crystals-API-exhibition',
+    resume: 'Luna Crystals API developed in NodeJs develope using NestJs',
+    git: 'https://github.com/tiagofort/api-luna',
     site: '',
     img: lunalogo,
   },
@@ -26,7 +26,7 @@ export const projects = [
   },
   {
     title: 'Luna Crystals APP',
-    resume: 'Luna Crystals APP developed using Vue/Vuetify',
+    resume: 'Luna Crystals APP developed using React, JavaScript and Taildwind',
     git: 'https://github.com/tiagofort/luna-user-APP-exhibition',
     site: 'https://www.luna-crystals.com',
     img: lunapp,
