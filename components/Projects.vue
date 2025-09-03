@@ -1,12 +1,6 @@
 <template>
   <div class="text-center mb-12">
-      <h2 class="text-4xl md:text-5xl font-bold text-white">
-        My Works
-      </h2>
-      <p class="mt-4 text-gray-300 max-w-2xl mx-auto">
-        Witness the beauty of nature through our lens, as we showcase stunning
-        landscapes that evoke wonder and appreciation for the environment.
-      </p>
+    <h2 class="text-4xl md:text-5xl font-bold text-white">My Works</h2>
   </div>
   <div class="container mx-auto py-16">
     <!-- Carrossel -->
@@ -14,7 +8,9 @@
       <!-- Slides wrapper -->
       <div
         class="flex transition-transform duration-500"
-        :style="{ transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)` }"
+        :style="{
+          transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
+        }"
       >
         <div
           v-for="(project, i) in projects"
@@ -67,10 +63,19 @@
         @click="prevSlide"
         class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow hover:bg-gray-100"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor" class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M15 19l-7-7 7-7" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
         </svg>
       </button>
 
@@ -79,10 +84,19 @@
         @click="nextSlide"
         class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow hover:bg-gray-100"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor" class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M9 5l7 7-7 7" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+          />
         </svg>
       </button>
     </div>
@@ -128,8 +142,6 @@ function prevSlide() {
 
 function nextSlide() {
   currentIndex.value =
-    currentIndex.value === totalSlides.value - 1
-      ? 0
-      : currentIndex.value + 1;
+    currentIndex.value === totalSlides.value - 1 ? 0 : currentIndex.value + 1;
 }
 </script>

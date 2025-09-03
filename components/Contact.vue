@@ -5,14 +5,22 @@
     >
       <div class="order-first sm:order-last">
         <div class="h-48 w-48 overflow-hidden rounded-lg sm:h-64 sm:w-64">
-          <img :src="img" alt="Contact Image" class="h-full w-full object-cover">
+          <img
+            :src="img"
+            alt="Contact Image"
+            class="h-full w-full object-cover"
+          />
         </div>
       </div>
 
       <div class="order-last sm:order-first">
-        <h2 class="mb-6 text-3xl font-bold sm:text-4xl text-white">Get in touch</h2>
+        <h2 class="mb-6 text-3xl font-bold sm:text-4xl text-white">
+          Get in touch
+        </h2>
 
-        <div class="flex items-center justify-center gap-4 sm:justify-start text-white">
+        <div
+          class="flex items-center justify-center gap-4 sm:justify-start text-white"
+        >
           <a
             href="https://www.linkedin.com/in/tiago-fortaleza-gai/"
             target="_blank"
@@ -34,7 +42,7 @@
           >
             <Icon icon="mdi:whatsapp" class="w-8 h-8 text-white-500" />
           </a>
-          <Dialog class=" ml-n2 text-white"/>
+          <Dialog class="ml-n2 text-white" />
         </div>
       </div>
     </div>
@@ -42,12 +50,12 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import Dialog from '@/components/Dialog.vue';
+import { ref } from "vue";
+import Dialog from "@/components/Dialog.vue";
 import { Icon } from "@iconify/vue";
 
 const img = ref(null);
-import('../assets/images/contact.png').then(module => {
+import("../assets/images/contact.webp").then((module) => {
   img.value = module.default;
 });
 </script>

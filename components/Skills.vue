@@ -1,11 +1,11 @@
 <template>
   <div class="container mx-auto p-4 md:p-10">
-    <div class="text-4xl font-bold md:text-5xl text-white mb-10">Skills</div>
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-bold text-white">Skills</h2>
+    </div>
 
     <div v-for="category in skills" :key="category.category" class="mb-24">
-      <h3
-        class="mb-5 text-center text-2xl font-semibold md:text-3xl text-white"
-      >
+      <h3 class="mb-5 text-left text-2xl font-semibold md:text-3xl text-white">
         {{ category.category }}
       </h3>
 
