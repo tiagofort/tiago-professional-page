@@ -47,4 +47,11 @@ export const projects = [
     site: '',
     img: ucdb,
   },
+  {
+    title: 'FRONTEND ADM KNOWLEDGE AND ATTITUDES REGARDING SUICIDE',
+    resume: 'ADM page built using React, JavaScript and Tailwind',
+    git: 'https://github.com/tiagofort/ucbd_api',
+    site: '',
+    img: ucdb,
+  },
 ];
