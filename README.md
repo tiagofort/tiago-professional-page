@@ -68,6 +68,6 @@ It showcases my skills, professional experience, and selected projects, providin
 Clone the repository and install dependencies:
 
 ```bash
-git clone <repository-url>
-cd <project-name>
+git https://github.com/tiagofort/tiago-professional-page.git
+cd tiagofort
 npm install
