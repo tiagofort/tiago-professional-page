@@ -1,6 +1,8 @@
 import lunalogo from '../assets/images/logoLuna.svg';
 import tiagoprof from '../assets/images/tiago-profile.webp';
 import lunapp from '../assets/images/luna-app.webp';
+import ucdbapp from '../assets/images/ucdbapp.webp';
+import ucdb from '../assets/images/ucdb.webp';
 
 export const projects = [
   {
@@ -12,7 +14,7 @@ export const projects = [
   },
   {
     title: 'Luna Crystals API',
-    resume: 'Luna Crystals API developed in NodeJs develope using NestJs',
+    resume: 'Luna Crystals API developed in NodeJs and Express',
     git: 'https://github.com/tiagofort/api-luna',
     site: '',
     img: lunalogo,
@@ -30,5 +32,19 @@ export const projects = [
     git: 'https://github.com/tiagofort/luna-user-APP-exhibition',
     site: 'https://www.luna-crystals.com',
     img: lunapp,
+  },
+  {
+    title: 'KNOWLEDGE AND ATTITUDES REGARDING SUICIDE',
+    resume: 'This project is a simple, lightweight survey application built using React, vanilla CSS, and JavaScript',
+    git: 'https://github.com/tiagofort/ucdb',
+    site: 'https://ucdb.vercel.app/',
+    img: ucdbapp,
+  },
+  {
+    title: 'BACKEND KNOWLEDGE AND ATTITUDES REGARDING SUICIDE',
+    resume: 'REST API built with Node.js and MongoDB',
+    git: 'https://github.com/tiagofort/ucbd_api',
+    site: '',
+    img: ucdb,
   },
 ];

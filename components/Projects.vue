@@ -9,13 +9,14 @@
       <div
         class="flex transition-transform duration-500"
         :style="{
-          transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
+          transform: `translateX(-${currentIndex * 100}%)`,
         }"
       >
         <div
           v-for="(project, i) in projects"
           :key="i"
-          class="flex-shrink-0 px-4 w-full sm:w-1/2 lg:w-1/3"
+          class="flex-shrink-0 px-4"
+          :style="{ width: `${100 / itemsPerView}%` }"
         >
           <div
             class="relative h-[400px] rounded-3xl overflow-hidden shadow-lg group bg-white"
