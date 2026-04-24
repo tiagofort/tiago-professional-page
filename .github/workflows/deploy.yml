@@ -3,11 +3,12 @@ name: Deploy Nuxt 3 to AWS
 on:
   push:
     branches:
-      - main
+      - main, master
 
 permissions:
-  id-token: write
-  contents: read
+  permissions:
+    id-token: write
+    contents: read
 
 jobs:
   deploy:
