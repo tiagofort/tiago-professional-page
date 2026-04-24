@@ -5,6 +5,12 @@ It showcases my skills, professional experience, and selected projects.
 
 ---
 
+## 📱 Fully Responsive Design
+
+![Responsive Preview](https://imagens-tiago.s3.eu-north-1.amazonaws.com/Screenshot+2026-04-24+234314.png)
+
+---
+
 ## 🚀 Tech Stack
 
 - **Framework:** Nuxt 3 (Vue 3)
