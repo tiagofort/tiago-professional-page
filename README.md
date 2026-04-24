@@ -1,7 +1,7 @@
 # Portfolio Website
 
 This project is a personal portfolio built with **Nuxt 3**, **Vue 3**, and **Tailwind CSS**.  
-It showcases my skills, professional experience, and selected projects, providing an overview of my profile as a developer.
+It showcases my skills, professional experience, and selected projects.
 
 ---
 
@@ -11,63 +11,189 @@ It showcases my skills, professional experience, and selected projects, providin
 - **Styling:** Tailwind CSS
 - **Language:** JavaScript / TypeScript
 - **Testing:** Vitest
+- **Cloud & Deployment:** AWS (S3, CloudFront)
+- **CI/CD:** GitHub Actions
 
 ---
 
 ## 📂 Project Structure
 
 ```
-├── assets/ # Static assets such as images
-├── components/ # Vue components used across the app
-│ ├── About.vue # About me section with a short summary and career goals
-│ ├── Badge.vue # Renders each skill (fed by composables/skills.js)
-│ ├── Contact.vue # Contact information and links
-│ ├── Dialog.vue # Dialog to show "email copied" message in Contact section
-│ ├── Footer.vue # Footer of the website
-│ ├── Header.vue # Header with navigation (Home, Skills, Projects, Contact)
-│ ├── MobileMenu.vue # Mobile version of the Header for smaller screens
-│ ├── Projects.vue # List of projects with GitHub and/or website links
-│ └── Skills.vue # Skills section with years of experience
-│
-├── composables/ # Data and utility logic
-│ ├── experience.js # Function to calculate years of experience
-│ ├── projects.js # Array of project data used in Projects section
-│ └── skills.js # Array of skills data used in Skills section
-│
+├── assets/
+├── components/
+├── composables/
 ├── layouts/
-│ └── default.vue # Default layout wrapping all pages
-│
 ├── pages/
-│ └── index.vue # Main entry page of the portfolio
-│
-├── public/ # Public static files
-│
-├── app.vue # Root Vue component
-├── nuxt.config.ts # Nuxt configuration file
-├── tailwind.config.js # Tailwind CSS configuration
-├── tsconfig.json # TypeScript configuration
-└── vitest.config.ts # Vitest configuration
+├── public/
+├── .github/workflows/
+│   └── deploy.yml
+├── app.vue
+├── nuxt.config.ts
+├── tailwind.config.js
+├── tsconfig.json
+└── vitest.config.ts
 ```
-
 
 ---
 
 ## 📑 Features
 
-- **Responsive Design:** Works seamlessly on desktop and mobile devices.
-- **About Section:** Quick overview of my background, skills, and career goals.
-- **Skills Section:** Visual representation of my technical stack, with years of experience.
-- **Projects Section:** Highlighted personal and professional projects with GitHub and live demo links.
-- **Contact Section:** Direct ways to reach me, including an interactive dialog that confirms when an email address is copied.
-- **Dynamic Data:** Skills and projects are dynamically loaded from composables (`skills.js`, `projects.js`).
+- Responsive Design
+- Dynamic Data via Composables
+- Projects Showcase
+- Interactive Contact Section
+- Modern UI with Tailwind CSS
 
 ---
 
 ## 📦 Installation & Setup
 
-Clone the repository and install dependencies:
+```bash
+git clone https://github.com/tiagofort/tiago-professional-page.git
+cd tiago-professional-page
+npm install
+npm run dev
+```
+
+---
+
+## ☁️ Deployment (AWS S3 + CloudFront)
+
+This project uses a **static hosting architecture on AWS**:
+
+- **Amazon S3** → Stores static files
+- **CloudFront** → CDN + HTTPS
+- **OAC (Origin Access Control)** → Secures S3 access
+
+---
+
+## 🏗️ Build Process
 
 ```bash
-git https://github.com/tiagofort/tiago-professional-page.git
-cd tiagofort
-npm install
+npm run generate
+```
+
+This generates:
+
+```
+.output/public
+```
+
+Only this folder is deployed to S3.
+
+---
+
+## 🪣 S3 Configuration
+
+- Bucket is **private (no public access)**
+- Static website hosting **disabled**
+- Files uploaded from `.output/public`
+- Encryption enabled (SSE-S3)
+- Access only via CloudFront (OAC)
+
+---
+
+## 🌐 CloudFront Configuration
+
+- Origin: S3 bucket
+- Access: **OAC (Origin Access Control)**
+- Default root object: `index.html`
+- HTTPS enabled
+- Global CDN
+
+### SPA Routing Fix (Nuxt)
+
+Custom error responses:
+
+- 403 → `/index.html`
+- 404 → `/index.html`
+
+---
+
+## 🔄 CI/CD Pipeline (GitHub Actions)
+
+### 📁 Location
+
+```
+.github/workflows/deploy.yml
+```
+
+### ⚙️ Flow
+
+On every push:
+
+1. Install dependencies
+2. Build project
+3. Upload to S3
+4. Invalidate CloudFront cache
+
+---
+
+## 📜 GitHub Actions Workflow
+
+```yaml
+name: Deploy Nuxt 3 to AWS
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      - run: npm run generate
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: YOUR_AWS_ROLE_ARN
+          aws-region: eu-west-1
+
+      - run: aws s3 sync .output/public s3://YOUR_BUCKET --delete
+
+      - run: aws cloudfront create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --paths "/*"
+```
+
+---
+
+## 🔐 Security
+
+- Uses **GitHub OIDC authentication**
+- No AWS credentials stored
+- IAM Role with restricted permissions
+- S3 is **not public**
+
+---
+
+## 🌍 Live Application
+
+👉 https://d2hwdjexkuxjzy.cloudfront.net
+
+---
+
+## 🏆 Key Highlights
+
+- CI/CD fully automated
+- Secure AWS architecture
+- CloudFront CDN distribution
+- SPA routing handled correctly
+- Production-ready setup
+
+---
+
+## 📬 Contact
+
+Feel free to reach out via the contact section or GitHub.
