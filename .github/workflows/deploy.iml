@@ -1,0 +1,41 @@
+name: Deploy Nuxt 3 to AWS S3 and CloudFront
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate static site
+        run: npm run generate
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::131446034251:role/github-actions-tiago-portfolio-role
+          aws-region: eu-west-1
+
+      - name: Deploy to S3
+        run: aws s3 sync .output/public s3://tiago-portfolio --delete
+
+      - name: Invalidate CloudFront cache
+        run: aws cloudfront create-invalidation --distribution-id EUFH7VO1THWI3 --paths "/*"
