@@ -110,7 +110,7 @@ import { Icon } from "@iconify/vue";
 import { projects } from "@/composables/projects.js";
 
 const currentIndex = ref(0);
-const itemsPerView = ref(1); // quantos cards aparecem ao mesmo tempo
+const itemsPerView = ref(1);
 
 // detectar largura da tela e ajustar qtd de itens
 function updateItemsPerView() {
@@ -133,7 +133,7 @@ onBeforeUnmount(() => {
 
 // total de "páginas" baseado na quantidade de itens visíveis
 const totalSlides = computed(() =>
-  Math.ceil(projects.length / itemsPerView.value)
+  Math.ceil(projects.length / itemsPerView.value),
 );
 
 function prevSlide() {
