@@ -114,11 +114,11 @@ const itemsPerView = ref(1);
 
 function updateItemsPerView() {
   if (window.innerWidth >= 1024) {
-    itemsPerView.value = 3; // desktop → 3 cards
+    itemsPerView.value = 3;
   } else if (window.innerWidth >= 640) {
-    itemsPerView.value = 2; // tablet → 2 cards
+    itemsPerView.value = 2;
   } else {
-    itemsPerView.value = 1; // mobile → 1 card
+    itemsPerView.value = 1;
   }
 }
 

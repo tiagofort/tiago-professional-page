@@ -59,7 +59,6 @@
 <script setup>
 import { ref } from "vue";
 
-// Use a dynamic import for better performance
 const avatar = ref(null);
 import("../assets/images/badge.jpg").then((module) => {
   avatar.value = module.default;
