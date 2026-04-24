@@ -1,6 +1,6 @@
 <template>
   <div class="text-center mb-12">
-    <h2 class="text-4xl md:text-5xl font-bold text-white">My Works</h2>
+    <h2 class="text-4xl md:text-5xl font-bold text-white">Projects</h2>
   </div>
   <div class="container mx-auto py-16">
     <!-- Carrossel -->
