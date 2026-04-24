@@ -1,6 +1,7 @@
 import lunalogo from "../assets/images/luna-logo.webp";
 import tiagoprof from "../assets/images/tiago-profile.webp";
 import lunapp from "../assets/images/luna-app.webp";
+import lunaadm from "../assets/images/luna-adm.png";
 import ucdbapp from "../assets/images/ucdbapp.webp";
 import ucdb from "../assets/images/ucdb.webp";
 
@@ -9,7 +10,7 @@ export const projects = [
     title: "Tiago Profile",
     resume: "My professional page developed using Vue3, Nuxt3 and Tailwind",
     git: "https://github.com/tiagofort/tiago-professional-page",
-    site: "https://www.tiagofortgai.com",
+    site: "https://d2hwdjexkuxjzy.cloudfront.net/",
     img: tiagoprof,
   },
   {
@@ -24,7 +25,7 @@ export const projects = [
     resume: "Luna Crystals Admin developed using Vue/Vuetify",
     git: "https://github.com/tiagofort/adm-APP-exhibition",
     site: "https://luna-adm-app-exhibition-54f540dbf795.herokuapp.com/",
-    img: lunalogo,
+    img: lunaadm,
   },
   {
     title: "Luna Crystals APP",
@@ -52,7 +53,7 @@ export const projects = [
     title: "Suicide intervention studies ADM APP",
     resume: "ADM page built using React, JavaScript and Tailwind",
     git: "https://github.com/tiagofort/ucbd_api",
-    site: "",
+    site: "https://ucdb-admin.vercel.app/",
     img: ucdb,
   },
 ];
