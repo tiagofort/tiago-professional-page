@@ -112,7 +112,6 @@ import { projects } from "@/composables/projects.js";
 const currentIndex = ref(0);
 const itemsPerView = ref(1);
 
-// detectar largura da tela e ajustar qtd de itens
 function updateItemsPerView() {
   if (window.innerWidth >= 1024) {
     itemsPerView.value = 3; // desktop → 3 cards
